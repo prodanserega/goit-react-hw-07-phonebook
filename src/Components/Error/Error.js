@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 import s from "../Error/Error.module.css";
 
-class ErrorPopup extends Component {
+class Error extends Component {
   static propTypes = {
     message: PropTypes.string,
     error: PropTypes.object,
@@ -38,4 +38,4 @@ const mapDispatchToProps = (dispatch) => ({
   clearError: () => dispatch(contactsActions.clearError()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ErrorPopup);
+export default connect(mapStateToProps, mapDispatchToProps)(Error);

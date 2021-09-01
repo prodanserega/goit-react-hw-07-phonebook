@@ -21,18 +21,8 @@ class ContactForm extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
 
-    const { name } = this.state;
-    const { contacts } = this.props;
-
     if (!this.state.name || !this.state.phone) {
       alert("Enter the name!");
-      return;
-    }
-
-    if (
-      contacts.find((item) => item.name.toLowerCase() === name.toLowerCase())
-    ) {
-      alert(`${name} already exists. Try another name`);
       return;
     }
 

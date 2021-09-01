@@ -3,7 +3,7 @@ import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import s from "../Loader/Loader.module.css";
 
-class LoaderSpin extends Component {
+class loader extends Component {
   state = {};
   render() {
     return (
@@ -14,4 +14,4 @@ class LoaderSpin extends Component {
   }
 }
 
-export default LoaderSpin;
+export default loader;
