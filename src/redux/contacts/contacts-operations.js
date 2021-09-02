@@ -1,7 +1,9 @@
 import axios from "axios";
 import actions from "./contacts-actions";
 
-axios.defaults.baseURL = "http://localhost:3000";
+const BASEURL = "http://localhost:3000";
+
+axios.defaults.baseURL = BASEURL;
 
 const fetchContacts = () => async (dispatch) => {
   dispatch(actions.fetchContactsRequest());
