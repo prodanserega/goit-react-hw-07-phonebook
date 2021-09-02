@@ -1,7 +1,7 @@
 import axios from "axios";
 import actions from "./contacts-actions";
 
-const BASEURL = "http://localhost:3000";
+const BASEURL = "http://localhost:3001";
 
 axios.defaults.baseURL = BASEURL;
 
