@@ -11,6 +11,8 @@ class ContactForm extends Component {
   state = {
     name: "",
     phone: "",
+    error: false,
+    errorMessage: null,
   };
 
   handelChangeForm = ({ target }) => {
@@ -21,23 +23,13 @@ class ContactForm extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
 
-    const { name } = this.state;
-    const { contacts } = this.props;
-
-    if (!this.state.name || !this.state.phone) {
-      alert("Enter the name!");
+    if (this.state.name && this.state.phone !== "") {
+      const { name, phone } = this.state;
+      this.props.onSubmit(name, phone);
+      this.resetForm();
       return;
     }
-
-    if (
-      contacts.find((item) => item.name.toLowerCase() === name.toLowerCase())
-    ) {
-      alert(`${name} already exists. Try another name`);
-      return;
-    }
-
-    this.props.onSubmit(this.state);
-    this.resetForm();
+    alert("Please, input name and phone");
   };
 
   resetForm = () =>
@@ -45,6 +37,7 @@ class ContactForm extends Component {
       name: "",
       phone: "",
     });
+
   render() {
     const { name, phone } = this.state;
     return (

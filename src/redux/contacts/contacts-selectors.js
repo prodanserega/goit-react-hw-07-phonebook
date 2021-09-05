@@ -7,8 +7,8 @@ const getError = (state) => state.contacts.error;
 
 const getFilteredContacts = createSelector(
   [getContacts, getFilter],
-  (contacts, filter) => {
-    return contacts.filter((contact) =>
+  (allContacts, filter) => {
+    return allContacts.filter((contact) =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   }
