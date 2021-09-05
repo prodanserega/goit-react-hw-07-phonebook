@@ -13,6 +13,11 @@ class ContactForm extends Component {
     phone: "",
   };
 
+  handelChangeForm = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
+  };
+
   handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -40,7 +45,6 @@ class ContactForm extends Component {
       name: "",
       phone: "",
     });
-
   render() {
     const { name, phone } = this.state;
     return (
